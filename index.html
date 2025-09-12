@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Projetos para a OBSAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googaleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Scientific Explorer -->
+    <!-- Application Structure Plan: A single-page, multi-section guide designed for structured learning. The flow is logical and sequential: Introduction -> Types of Satellites -> Core Components -> Defining the Mission -> Skills to Develop -> Phase 1: Justifying the Problem. The structure uses a sidebar for navigation and a main content area. This approach provides clear context and allows the user to easily jump between key topics, which is ideal for a study guide. Key interactions include tabbed content for a clean component list, and a simple card-based layout for types and mission steps. The new section on skills adds another layer of structured information, also using a card-based layout to present information clearly. -->
+    <!-- Visualization & Content Choices: Report Info: Satellite types/differences -> Goal: Differentiate -> Method: Card-based grid with text and simple images. Justification: Visually separates each type and presents key differences clearly. | Report Info: Components -> Goal: Inform -> Method: Tabbed interface. Interaction: Clicking a tab shows specific content for that component. Justification: Organizes a lot of information in a clean, non-cluttered way. | Report Info: Mission definition -> Goal: Guide process -> Method: Step-by-step numbered cards. Justification: Breaks a complex process into manageable, logical steps. | Report Info: Skills -> Goal: Guide development -> Method: Card-based grid with text. Justification: Provides a clear, at-a-glance overview of key skill areas. | Report Info: Problem justification/solution -> Goal: Guide process -> Method: Step-by-step numbered cards. Justification: Breaks down the writing process into manageable parts. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        .nav-link.active {
+            background-color: #3f51b5;
+            color: white;
+            font-weight: bold;
+        }
+        .tab-button.active {
+            background-color: #e0e7ff;
+            font-weight: bold;
+            color: #3f51b5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-stone-800">
+    <header class="bg-indigo-700 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-center">
+            <h1 class="text-3xl font-black">Guia de Projetos para a OBSAT</h1>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row">
+        <aside class="md:w-1/4 mb-8 md:mb-0 md:mr-8 p-6 bg-white rounded-lg shadow-lg">
+            <nav class="flex flex-col space-y-2">
+                <a href="#intro" class="nav-link p-3 rounded-md transition-colors hover:bg-gray-200">Introdução</a>
+                <a href="#tipos" class="nav-link p-3 rounded-md transition-colors hover:bg-gray-200">Tipos de Satélites</a>
+                <a href="#componentes" class="nav-link p-3 rounded-md transition-colors hover:bg-gray-200">Componentes Principais</a>
+                <a href="#missao" class="nav-link p-3 rounded-md transition-colors hover:bg-gray-200">Definindo a Missão</a>
+                <a href="#habilidades" class="nav-link p-3 rounded-md transition-colors hover:bg-gray-200">Habilidades a Desenvolver</a>
+                <a href="#fase1" class="nav-link p-3 rounded-md transition-colors hover:bg-gray-200">Fase 1: Justificando o Problema e Propondo a Solução</a>
+            </nav>
+        </aside>
+
+        <main class="md:w-3/4">
+            <section id="intro" class="p-8 bg-white rounded-lg shadow-lg mb-8">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-4">Bem-vindo à sua Jornada Espacial!</h2>
+                <p class="text-lg text-gray-700">
+                    A primeira fase da Olimpíada Brasileira de Satélites (OBSAT) é o momento de planejar e projetar a sua missão. Este guia interativo foi criado para te ajudar a estruturar seu projeto, desde a escolha do tipo de satélite até a definição de sua missão. Prepare-se para pensar como um engenheiro espacial!
+                </p>
+            </section>
+
+            <section id="tipos" class="p-8 bg-white rounded-lg shadow-lg mb-8">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-6">1. Tipos de Satélites Educacionais</h2>
+                <p class="text-gray-700 mb-6">Existem três tipos principais de satélites educacionais que você pode usar no seu projeto. Cada um tem um tamanho e propósito diferentes.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/100x100/ADD8E6/2D3A3B?text=CubeSat" alt="Ícone de CubeSat" class="mb-4">
+                        <h3 class="text-xl font-bold text-blue-700 mb-2">CubeSat</h3>
+                        <p class="text-gray-600">O padrão mais conhecido, com formato de cubo. Ideal para missões mais complexas. O tamanho é 10x10x10 cm.</p>
+                        <ul class="text-sm text-gray-500 mt-2 list-disc list-inside">
+                            <li>Formato: Cubo</li>
+                            <li>Tamanho: 10x10x10 cm</li>
+                            <li>Missões: Mais avançadas</li>
+                        </ul>
+                    </div>
+                    <div class="bg-lime-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/100x100/90EE90/2D3A3B?text=CanSat" alt="Ícone de CanSat" class="mb-4">
+                        <h3 class="text-xl font-bold text-lime-700 mb-2">CanSat</h3>
+                        <p class="text-gray-600">Simula um satélite de verdade, mas com as partes dentro de uma lata de refrigerante. Perfeito para iniciantes.</p>
+                        <ul class="text-sm text-gray-500 mt-2 list-disc list-inside">
+                            <li>Formato: Lata de refri</li>
+                            <li>Tamanho: 66x115 mm</li>
+                            <li>Missões: Menos complexas</li>
+                        </ul>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/100x100/FFDAB9/2D3A3B?text=PocketSat" alt="Ícone de PocketSat" class="mb-4">
+                        <h3 class="text-xl font-bold text-orange-700 mb-2">PocketSat</h3>
+                        <p class="text-gray-600">Ainda menor, cabe no bolso. É o tipo mais simples para começar a aprender sobre satélites.</p>
+                        <ul class="text-sm text-gray-500 mt-2 list-disc list-inside">
+                            <li>Formato: Cubo menor</li>
+                            <li>Tamanho: 50x50x50 mm</li>
+                            <li>Missões: Conceituais</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="componentes" class="p-8 bg-white rounded-lg shadow-lg mb-8">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-6">2. Componentes Principais</h2>
+                <p class="text-gray-700 mb-6">Um satélite é uma máquina com vários sistemas trabalhando juntos. Clique nas abas para ver os principais componentes de um satélite educacional.</p>
+                <div class="flex flex-wrap border-b border-gray-200">
+                    <button class="tab-button p-4 text-gray-600 hover:bg-gray-100 transition-colors" data-tab="estrutura">Estrutura</button>
+                    <button class="tab-button p-4 text-gray-600 hover:bg-gray-100 transition-colors" data-tab="energia">Sistema de Energia</button>
+                    <button class="tab-button p-4 text-gray-600 hover:bg-gray-100 transition-colors" data-tab="comunicacao">Comunicação</button>
+                    <button class="tab-button p-4 text-gray-600 hover:bg-gray-100 transition-colors" data-tab="computador">Computador de Bordo</button>
+                    <button class="tab-button p-4 text-gray-600 hover:bg-gray-100 transition-colors" data-tab="carga-util">Carga Útil</button>
+                </div>
+                
+                <div id="tab-content" class="mt-4 p-4 bg-gray-50 rounded-lg">
+                    <div id="tab-estrutura" class="tab-pane hidden">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Estrutura (Body)</h3>
+                        <p>É o "corpo" do satélite. Feita de materiais leves e resistentes, protege todos os componentes internos durante o lançamento e no espaço.</p>
+                    </div>
+                    <div id="tab-energia" class="tab-pane hidden">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Sistema de Energia (Power)</h3>
+                        <p>Fornece energia para todos os sistemas. Geralmente usa baterias e painéis solares para recarregar. É o "coração" elétrico do satélite.</p>
+                    </div>
+                    <div id="tab-comunicacao" class="tab-pane hidden">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Comunicação (Comms)</h3>
+                        <p>Permite que o satélite envie dados para a Terra e receba comandos. É o "telefone" do satélite, conectando-o com a equipe em solo.</p>
+                    </div>
+                    <div id="tab-computador" class="tab-pane hidden">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Computador de Bordo (OBC)</h3>
+                        <p>É o "cérebro" do satélite. Um microcontrolador (como o Arduino) que executa o código e controla os outros sistemas.</p>
+                    </div>
+                    <div id="tab-carga-util" class="tab-pane hidden">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Carga Útil (Payload)</h3>
+                        <p>É a parte mais importante, pois define a missão do satélite. Pode ser uma câmera, sensores de temperatura, ou qualquer outro experimento.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="missao" class="p-8 bg-white rounded-lg shadow-lg mb-8">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-6">3. Definindo a Missão</h2>
+                <p class="text-gray-700 mb-6">O projeto da OBSAT começa com duas perguntas essenciais. Siga estes passos para definir a sua missão!</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Passo 1: Qual problema eu quero resolver?</h3>
+                        <p class="text-gray-700">Pense em um desafio ou curiosidade que possa ser investigado do espaço. Por exemplo: "Quero saber a temperatura em diferentes altitudes da atmosfera" ou "Quero testar um novo material para painéis solares".</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Passo 2: Qual a missão do meu satélite?</h3>
+                        <p class="text-gray-700">A missão é o objetivo do seu satélite. Use um verbo de ação. Exemplo: "Medir a temperatura e umidade", "Fotografar uma paisagem", ou "Coletar dados de pressão atmosférica".</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="habilidades" class="p-8 bg-white rounded-lg shadow-lg mb-8">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-6">4. Habilidades a Desenvolver</h2>
+                <p class="text-gray-700 mb-6">Participar da OBSAT é uma ótima oportunidade para desenvolver diversas habilidades importantes para o futuro. Veja as principais áreas:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-700 mb-2">1. Habilidades Técnicas e Científicas</h3>
+                        <ul class="text-gray-600 mt-2 list-disc list-inside">
+                            <li>Eletrônica e Programação</li>
+                            <li>Física e Matemática</li>
+                            <li>Análise de Dados</li>
+                            <li>Conhecimento de Sistemas Espaciais</li>
+                        </ul>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-700 mb-2">2. Habilidades de Engenharia e de Execução</h3>
+                        <ul class="text-gray-600 mt-2 list-disc list-inside">
+                            <li>Design e Construção de Hardware</li>
+                            <li>Planejamento de Testes</li>
+                            <li>Resolução de Problemas</li>
+                            <li>Trabalho em Equipe</li>
+                        </ul>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-700 mb-2">3. Habilidades de Projeto e Documentação</h3>
+                        <ul class="text-gray-600 mt-2 list-disc list-inside">
+                            <li>Organização e Gestão do Projeto</li>
+                            <li>Elaboração de Relatórios Técnicos</li>
+                            <li>Apresentação de Resultados</li>
+                            <li>Comunicação Científica</li>
+                        </ul>
+                    </div>
+                     <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-700 mb-2">4. Trabalho em Equipe e Liderança</h3>
+                        <ul class="text-gray-600 mt-2 list-disc list-inside">
+                            <li>Colaboração e Compartilhamento</li>
+                            <li>Resolução de Conflitos</li>
+                            <li>Divisão de Tarefas</li>
+                            <li>Tomada de Decisão em Grupo</li>
+                        </ul>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-700 mb-2">5. Comunicação e Apresentação</h3>
+                        <ul class="text-gray-600 mt-2 list-disc list-inside">
+                            <li>Comunicação Escrita (relatórios)</li>
+                            <li>Comunicação Oral (apresentação)</li>
+                            <li>Comunicação Visual (diagramas, gráficos)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-700 mb-2">6. Postura Científica</h3>
+                        <ul class="text-gray-600 mt-2 list-disc list-inside">
+                            <li>Ceticismo e Curiosidade</li>
+                            <li>Raciocínio Lógico</li>
+                            <li>Análise Crítica</li>
+                            <li>Ética na Pesquisa</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="fase1" class="p-8 bg-white rounded-lg shadow-lg mb-8">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-6">5. Fase 1: Justificando o Problema e Propondo a Solução</h2>
+                <p class="text-gray-700 mb-6">A primeira etapa do seu projeto é a mais importante. Siga estes passos para ter certeza de que seu relatório será completo e convincente.</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">1. Justificativa: Qual problema você vai resolver?</h3>
+                        <p class="text-gray-700">Comece identificando um problema do mundo real que possa ser resolvido (ou investigado) com um satélite. Sua justificativa deve responder a estas perguntas: "Por que este problema é importante?", "Quem ele afeta?" e "Por que a solução espacial é a mais adequada?".</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">2. Proposta de Solução: Como seu satélite vai resolver o problema?</h3>
+                        <p class="text-gray-700">Depois de justificar o problema, descreva a sua solução. Explique como o seu satélite funcionará, quais dados ele vai coletar ou o que ele vai fazer. Seja claro e detalhado, mostrando que sua ideia é viável e bem pensada.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">3. Escolha da Carga Útil (Payload)</h3>
+                        <p class="text-gray-700">A carga útil é o coração da sua missão. Ela é o que vai realizar o experimento. Pense nos sensores (para medir algo) e nos atuadores (para fazer algo). Por exemplo, a carga útil pode ser uma câmera, um sensor de temperatura, ou um medidor de pressão.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">4. Sensores e Atuadores: Quais você vai usar?</h3>
+                        <p class="text-gray-700">Com base na sua carga útil, liste os sensores e atuadores que você precisa. Por exemplo, se a sua missão é medir a temperatura, você vai precisar de um sensor de temperatura. A maioria desses componentes pode ser encontrada em lojas de eletrônica e é compatível com placas como Arduino ou Raspberry Pi.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">5. Viabilidade e Orçamento: Os materiais existem para comprar?</h3>
+                        <p class="text-gray-700">Uma parte importante do projeto é verificar se os materiais necessários para a sua missão são acessíveis e estão disponíveis no mercado. Faça uma pesquisa rápida em lojas de eletrônica para garantir que os componentes (sensores, atuadores, baterias, etc.) podem ser adquiridos, e comece a montar um orçamento inicial.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            function updateActiveLink() {
+                const scrollY = window.pageYOffset;
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - 100;
+                    const id = current.getAttribute('id');
+                    const navLink = document.querySelector(`.nav-link[href*=${id}]`);
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        if (navLink) {
+                            navLink.classList.add('active');
+                        }
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink();
+
+            if (tabButtons.length > 0) {
+                tabButtons[0].classList.add('active');
+                tabPanes[0].classList.remove('hidden');
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tab = button.dataset.tab;
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    tabPanes.forEach(pane => pane.classList.add('hidden'));
+                    document.getElementById(`tab-${tab}`).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
